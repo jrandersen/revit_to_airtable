@@ -16,21 +16,17 @@ Technologies used:
  - We will write functions to manage a sync table to keep track of model sync events 
  - we will learn to segregate API endpoints in an environemts file for basic security. 
 
-&nbsp;
-
-## Get Started Using pyRevit
+### Get Started Using pyRevit
 
 [Install pyRevit](https://www.notion.so/Install-pyRevit-98ca4359920a42c3af5c12a7c99a196d)
 
 **↓** More guides are available here
-
 [HOW TO Guides](https://www.notion.so/HOW-TO-Guides-dc20e0e227b74d9bbc775699904152cb)
-
 [Create Your First Command](https://www.notion.so/Create-Your-First-Command-2509b43e28bd498fba937f5c1be7f485)
 
 &nbsp;
 
-
+## Tutorial
 ## Getting our application up and running
 - [Sprint](sprints/sprint1.md) - Get a custom tab, panel & button wired up in Revit UI 
 - [Sprint](sprints/sprint1.md) - Write functions to extract levels & rooms and print them in the PyRevit output
