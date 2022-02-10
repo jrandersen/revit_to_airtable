@@ -9,10 +9,17 @@ Technologies used:
  - PyRevit
  - NoCodeAPI
 
-## Intention
- We will cover building functions in IronPython in PyRevit to harvest revit elements and attributes, translate that into json format. We will then write functions for NoCodeAPI to do CRUD (create, read, update, delete) operations in an Airtable base. This workflow is intended to be an entry level, fast, nimble workflow that can extract and agregate information quickly. We will work to write a sync table to keep track of model sync to the base, segregate api endpoints in an environemts file (to 'gitignore') for basic security. 
+## What is covered in this tutorial
+ This workflow is intended to be an entry level, fast, nimble workflow that can extract and agregate information quickly.
+ - Building functions in IronPython for PyRevit to harvest model elements and attributes.
+ - We then translate those into json format. 
+ - We will then write functions for NoCodeAPI to do CRUD (create, read, update, delete) operations in an Airtable base.
+ - We will write functions to manage a sync table to keep track of model syncs to the base, 
+ - we will learn to segregate API endpoints in an environemts file for basic security. 
+&nbsp;
+---
 
-# Get Started Using pyRevit
+## Get Started Using pyRevit
 
 [Install pyRevit](https://www.notion.so/Install-pyRevit-98ca4359920a42c3af5c12a7c99a196d)
 
@@ -27,7 +34,27 @@ Technologies used:
 **↓** Read the docs to know everything about pyRevit scripts, extensions, ...
 
 [Developer Docs](https://www.notion.so/Developer-Docs-2c88f3ecccde422d9504e20b6b9e04f8)
+&nbsp;
+---
+
+## Getting our application up and running
+- Get a custom tab, panel & button wired up in Revit UI
+- Write functions to extract levels & rooms and print them in the PyRevit output
+- Write function for a put request through NoCodeAPI
+
+## More advanced topics
+- Establish an environments file, update API endpoints
+- Establish a sync table in Airtable.
+- Write functions to manage sync events
+- Write functions to manage linking from levels table to Rooms table. This will use, get, put and update functions
+&nbsp;
+---
+
+## Credits
+* [Ehsan Iran-Nejad](https://github.com/eirannejad) for developing pyRevit
+* [Icons8](https://icons8.com/) and its contributors for the sweet free icons
+* Everyone else  [listed on the pyRevit Repo](https://github.com/eirannejad/pyRevit/blob/master/README.md#credits)
 
 ![Made with love in Asheville, NC](https://madewithlove.now.sh/us?colorA=%23575757&colorB=%2344cbd5&template=for-the-badge&text=Asheville%2C+NC)
 
-Copyright © 2021 by Jason Andersen. All Rights Reserved
+Tutorial portion Copyright © 2022 by Jason Andersen. All Rights Reserved
