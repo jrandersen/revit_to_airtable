@@ -16,6 +16,7 @@ Technologies used:
  - We will then write functions for NoCodeAPI to do CRUD (create, read, update, delete) operations in an Airtable base.
  - We will write functions to manage a sync table to keep track of model syncs to the base, 
  - we will learn to segregate API endpoints in an environemts file for basic security. 
+
 &nbsp;
 ---
 
@@ -27,9 +28,8 @@ Technologies used:
 
 [HOW TO Guides](https://www.notion.so/HOW-TO-Guides-dc20e0e227b74d9bbc775699904152cb)
 
-## Get Started Developing for pyRevit
-
 [Create Your First Command](https://www.notion.so/Create-Your-First-Command-2509b43e28bd498fba937f5c1be7f485)
+
 &nbsp;
 ---
 
@@ -43,6 +43,7 @@ Technologies used:
 - Establish a sync table in Airtable.
 - Write functions to manage sync events
 - Write functions to manage linking from levels table to Rooms table. This will use, get, put and update functions
+
 &nbsp;
 ---
 
