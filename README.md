@@ -21,7 +21,9 @@ Technologies used:
 [Install pyRevit](https://www.notion.so/Install-pyRevit-98ca4359920a42c3af5c12a7c99a196d)
 
 **↓** More guides are available here
-[HOW TO Guides](https://www.notion.so/HOW-TO-Guides-dc20e0e227b74d9bbc775699904152cb)
+
+[How-to-guides](https://www.notion.so/HOW-TO-Guides-dc20e0e227b74d9bbc775699904152cb)
+
 [Create Your First Command](https://www.notion.so/Create-Your-First-Command-2509b43e28bd498fba937f5c1be7f485)
 
 &nbsp;
