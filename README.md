@@ -8,12 +8,12 @@ Technologies used:
  - PyRevit
  - NoCodeAPI
 
-### What is covered in this tutorial
+### Learning objectives
  This workflow is intended to be an entry level, fast, nimble workflow that can extract and agregate information quickly.
- - Building functions in IronPython for PyRevit to harvest model elements and attributes.
- - We then translate those into json format. 
+ - We will start by building functions in IronPython for PyRevit to harvest model elements and attributes.
+ - We then translate the element data into json format. 
  - We will then write functions for NoCodeAPI to do CRUD (create, read, update, delete) operations in an Airtable base.
- - We will write functions to manage a sync table to keep track of model syncs to the base, 
+ - We will write functions to manage a sync table to keep track of model sync events 
  - we will learn to segregate API endpoints in an environemts file for basic security. 
 
 &nbsp;
@@ -32,7 +32,7 @@ Technologies used:
 
 
 ## Getting our application up and running
-- Get a custom tab, panel & button wired up in Revit UI
+- [Sprint1](sprints/sprint1.md) Get a custom tab, panel & button wired up in Revit UI 
 - Write functions to extract levels & rooms and print them in the PyRevit output
 - Write function for a put request through NoCodeAPI
 
@@ -40,7 +40,7 @@ Technologies used:
 - Establish an environments file, update API endpoints
 - Establish a sync table in Airtable.
 - Write functions to manage sync events
-- Write functions to manage linking from levels table to Rooms table. This will use, get, put and update functions
+- Write functions to manage linking from levels table to rooms table. This will use, get, put and update functions
 
 &nbsp;
 
