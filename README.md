@@ -17,7 +17,6 @@ Technologies used:
  - we will learn to segregate API endpoints in an environemts file for basic security. 
 
 &nbsp;
----
 
 ## Get Started Using pyRevit
 
@@ -30,7 +29,7 @@ Technologies used:
 [Create Your First Command](https://www.notion.so/Create-Your-First-Command-2509b43e28bd498fba937f5c1be7f485)
 
 &nbsp;
----
+
 
 ## Getting our application up and running
 - Get a custom tab, panel & button wired up in Revit UI
@@ -44,7 +43,7 @@ Technologies used:
 - Write functions to manage linking from levels table to Rooms table. This will use, get, put and update functions
 
 &nbsp;
----
+
 
 ## Credits
 * [Ehsan Iran-Nejad](https://github.com/eirannejad) for developing pyRevit
