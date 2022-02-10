@@ -32,15 +32,15 @@ Technologies used:
 
 
 ## Getting our application up and running
-- [Sprint1](sprints/sprint1.md) Get a custom tab, panel & button wired up in Revit UI 
-- Write functions to extract levels & rooms and print them in the PyRevit output
-- Write function for a put request through NoCodeAPI
+- [Sprint](sprints/sprint1.md) - Get a custom tab, panel & button wired up in Revit UI 
+- [Sprint](sprints/sprint1.md) - Write functions to extract levels & rooms and print them in the PyRevit output
+- [Sprint](sprints/sprint1.md) - Write function for a put request through NoCodeAPI
 
 ## More advanced topics
-- Establish an environments file, update API endpoints
-- Establish a sync table in Airtable.
-- Write functions to manage sync events
-- Write functions to manage linking from levels table to rooms table. This will use, get, put and update functions
+- [Sprint](sprints/sprint2.md) - Establish an environments file, update API endpoints
+- [Sprint](sprints/sprint2.md) - Establish a sync table in Airtable.
+- [Sprint](sprints/sprint2.md) - Write functions to manage sync events
+- [Sprint](sprints/sprint2.md) - Write functions to manage linking from levels table to rooms table. This will use, get, put and update functions
 
 &nbsp;
 
