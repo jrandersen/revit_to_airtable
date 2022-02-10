@@ -3,13 +3,12 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 &nbsp;
 
-## How to build a Revit exporter and store the information in an Airtable base.
-
+### How to write a Revit exporter and store the information in Airtable.
 Technologies used:
  - PyRevit
  - NoCodeAPI
 
-## What is covered in this tutorial
+### What is covered in this tutorial
  This workflow is intended to be an entry level, fast, nimble workflow that can extract and agregate information quickly.
  - Building functions in IronPython for PyRevit to harvest model elements and attributes.
  - We then translate those into json format. 
