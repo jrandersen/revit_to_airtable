@@ -55,10 +55,12 @@ And here we have it.
 <br>
 
 ### Write a function for a *POST* request through NoCodeAPI.
-Get an airtable base up and running with the same columns from your model export, make sure the column headings are correct; case & datatype-sensitive!
+Get an airtable base up and running with the same columns from your model export, make sure the column headings are correct; case & datatype-sensitive! In my case I am only syncing 'name' & 'number' columns all others are done in airtable (we will cover more of this in later posts).
+
 ![image](airtable_rooms.png)
 
 Set up a NoCodeAPI account and your airtable API's on the platform.
+
 ![image](NCAPI_setup_airtable.png)
 
 When that is done you can test the API calls in teh NoCodeAPI UI, this also gives you the code to use in your app.
