@@ -18,13 +18,11 @@ Technologies used:
  - We will learn to encapsulate and obfuscate API endpoints in an environments like file for basic security. 
 
 ### Get Started Using pyRevit
-[Install pyRevit](https://www.notion.so/Install-pyRevit-98ca4359920a42c3af5c12a7c99a196d)
+Go here to learn how to [install pyRevit.](https://www.notion.so/Install-pyRevit-98ca4359920a42c3af5c12a7c99a196d)
 
-**↓** More guides are available here
-
-[How-to-guides](https://www.notion.so/HOW-TO-Guides-dc20e0e227b74d9bbc775699904152cb)
+**↓** More guides are available here:
 [Create Your First Command](https://www.notion.so/Create-Your-First-Command-2509b43e28bd498fba937f5c1be7f485)
----
+
 &nbsp;
 
 ## Tutorial, Getting our application up and running
@@ -44,7 +42,7 @@ Technologies used:
 ### Sprint Three
 - [Sprint](sprints/sprint2.md) - Establish a levels table, write functions to pull model elements.
 - [Sprint](sprints/sprint2.md) - Write functions to manage linking from levels table to rooms table.
----
+
 &nbsp;
 
 ### Credits
