@@ -30,9 +30,9 @@ Technologies used:
 
 ## Tutorial
 ## Getting our application up and running
-- [Sprint](sprints/sprint1.md) - Get a custom tab, panel & button wired up in Revit UI 
-- [Sprint](sprints/sprint1.md) - Write functions to extract levels & rooms and print them in the PyRevit output
-- [Sprint](sprints/sprint1.md) - Write function for a put request through NoCodeAPI
+- [Sprint](sprints/sprint 1/sprint1.md) - Get a custom tab, panel & button wired up in Revit UI 
+- [Sprint](sprints/sprint 1/sprint1.md) - Write functions to extract levels & rooms and print them in the PyRevit output
+- [Sprint](sprints/sprint 1/sprint1.md) - Write function for a put request through NoCodeAPI
 
 ## More advanced topics
 - [Sprint](sprints/sprint2.md) - Establish an environments file, update API endpoints
