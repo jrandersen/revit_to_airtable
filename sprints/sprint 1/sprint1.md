@@ -16,6 +16,7 @@ print(param)
 
 Test it... okay, it is up and running
 ![image](base_app.png)
+
 ---
 <br>
 
@@ -26,6 +27,7 @@ Organize them
 
 
 Create post command (make suer you have NoCodeAPI account)
+
 ---
 <br>
 
