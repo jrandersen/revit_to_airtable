@@ -1,4 +1,4 @@
-# hello world
+# base extension
 
-param = "hello World"
+param = "Hello World"
 print(param)
