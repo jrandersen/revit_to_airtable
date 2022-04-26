@@ -21,7 +21,10 @@ Test it... okay, it is up and running.
 <br>
 
 ### Write a basic functions to extract rooms and print them in the PyRevit output
-Replace our previous script with one that imports [Revit Python Wrapper](https://revitpythonwrapper.readthedocs.io/en/latest/) from [pyRevit](https://www.notion.so/pyrevitlabs/pyRevit-bd907d6292ed4ce997c46e84b6ef67a0). The create a collector of all rooms in the model.
+Replace our previous script with one that imports: 
+- Autodesk ```DB``` from [pyRevit](https://www.notion.so/pyrevitlabs/pyRevit-bd907d6292ed4ce997c46e84b6ef67a0)
+- [Revit Python Wrapper](https://revitpythonwrapper.readthedocs.io/en/latest/)  
+Then create a filtered element collector of all rooms in the model.
 ```python
 # pyRevit
 from pyrevit import DB
@@ -30,7 +33,7 @@ import rpw
 revitRoomCollector = rpw.db.Collector(of_category=DB.BuiltInCategory.OST_Rooms, is_not_type=True)
 ```
 
-Now that all rooms rae in ```revitRoomCollector``` loop through and make a dictionary of each rooma nd store that in a list.
+Now that all rooms are in ```revitRoomCollector``` loop through it and make a dictionary of each room and store that in a list.
 ```python
 def roomInfo(collector):
     roomInfo = []
@@ -39,11 +42,12 @@ def roomInfo(collector):
     return roomInfo
 ```
 
-print rooms in pyRevit window by instantiating the definition feeding it teh room collector. 
+print rooms in pyRevit window by instantiating the definition; supplying the room collector. 
 ```python
 print(roomInfo(revitRoomCollector))
 ```
 
+And here we have it
 ![image](print_rooms_output.png)
 
 ---
