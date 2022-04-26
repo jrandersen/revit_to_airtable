@@ -1,11 +1,16 @@
-# hello world
+# Sprint One
 
-### Create a plugin structue far a base app in pyRevit.
-Create a structure to house the app and run pyRevit
-![image](/base_app_code.png)
+### Create the plugin structure for a base application in pyRevit.
+Create a folder structure, py scripts, icons, and yaml files. You can find great icon on ICON8.
+![image](base_app_code.png)
+```python
+# base extension
 
+param = "Hello World"
+print(param)
+```
 Test it!
-![image](/base_app.png)
+![image](base_app.png)
 
 ### Write a basic functions to extract levels & rooms and print them in the PyRevit output
 
