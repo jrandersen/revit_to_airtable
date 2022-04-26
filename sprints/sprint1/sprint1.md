@@ -2,6 +2,7 @@
 ### Create the plugin structure for a base application in pyRevit.
 
 Basic folder structure, py scripts, icons, and yaml files. Find great selection of royalty free icons on [ICON8](https://icons8.com/icons).
+
 ![image](base_app_code.png)
 
 
@@ -15,6 +16,7 @@ print(param)
 
 
 Test it... okay, it is up and running.
+
 ![image](base_app.png)
 
 ---
@@ -92,6 +94,10 @@ You now have use the API to move information from Revit -> Airtable.
 ![image](airtableSync.png)
 
 ### Conclusions
-Sprint one is meant to get people up and running, fast. There are some major issue with this workflow such as hard-coding api calls into the base code, and the application does not 'remember' or 'know' if a certain model has been harvested, so it will just keep adding more and more rooms. We will cover these issues and more in the next tutorials.
+Sprint one is meant to get people up and running, fast. There are most certainly major issue with this workflow such as:
+- hard-coding api calls into the base code.
+- the application does not 'remember' or 'know' if a certain model has been harvested, so it will just keep adding more and more rooms.
+
+In the next tutorials, we will clean up some of this on our way to making this a more robust application.
 
 Hope folks find this helpful.
