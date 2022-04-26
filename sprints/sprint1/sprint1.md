@@ -43,7 +43,7 @@ def roomInfo(collector):
     return roomInfo
 ```
 
-print teh room information in pyRevit window by instantiating the definition and supplying the room collector as teh input. 
+print the room information in pyRevit window by instantiating the definition and supplying the room collector as the input. 
 ```python
 print(roomInfo(revitRoomCollector))
 ```
