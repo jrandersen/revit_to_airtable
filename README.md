@@ -30,9 +30,10 @@ Technologies used:
 
 ## Tutorial
 ## Getting our application up and running
-- [Sprint](https://github.com/jrandersen/revit_to_airtable/blob/main/sprints/sprint1/sprint1.md#write-a-basic-function-to-extract-rooms-then-print-them-in-the-pyrevit-output-window) - Get a custom tab, panel & button wired up in Revit UI 
-- [Sprint](sprints/sprint1/sprint1.md#Write a basic function to extract rooms then print them in the PyRevit output window:) - Write functions to extract rooms output
-- [Sprint](sprints/sprint1/sprint1.md#Write function for a put request through NoCodeAPI) - Display room info in pyRevit output
+
+- [Sprint](https://github.com/jrandersen/revit_to_airtable/blob/main/sprints/sprint1/sprint1.md#create-the-plugin-structure-for-a-base-application-in-pyrevit) - Get a custom tab, panel & button wired up in Revit UI 
+- [Sprint](https://github.com/jrandersen/revit_to_airtable/blob/main/sprints/sprint1/sprint1.md#write-a-basic-function-to-extract-rooms-then-print-them-in-the-pyrevit-output-window) - Write functions to extract rooms output
+- [Sprint](https://github.com/jrandersen/revit_to_airtable/blob/main/sprints/sprint1/sprint1.md#write-function-for-a-put-request-through-nocodeapi) - Display room info in pyRevit output
 
 ## More advanced topics
 - [Sprint](sprints/sprint2.md) - Establish a rooms table in AirTable.
