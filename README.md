@@ -1,10 +1,8 @@
 # Revit to AirTable Tutorial
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
----
 &nbsp;
-
-## How to write a Revit exporter and store the information in AirTable.
+## Write a Revit exporter and store the information in AirTable.
 Technologies used:
  - PyRevit
  - NoCodeAPI
@@ -20,8 +18,7 @@ Technologies used:
 ### Get Started Using pyRevit
 Go here to learn how to [install pyRevit.](https://www.notion.so/Install-pyRevit-98ca4359920a42c3af5c12a7c99a196d)
 
-**↓** More guides are available here:
-[Create Your First Command](https://www.notion.so/Create-Your-First-Command-2509b43e28bd498fba937f5c1be7f485)
+More guides are available here: [Create Your First Command](https://www.notion.so/Create-Your-First-Command-2509b43e28bd498fba937f5c1be7f485)
 
 &nbsp;
 
