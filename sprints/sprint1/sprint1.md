@@ -55,8 +55,25 @@ And here we have it.
 <br>
 
 ### Write function for a put request through NoCodeAPI
-Set up NoCodeAPI account
+Get an airtable base up and running with teh same columns from your model export, make sure the names are correct (case-sensitive) & data types are in line.
+![image](airtable_rooms.png)
 
-Create post command
+Set up a NoCodeAPI account and your airtable API's.
+![image](NCAPI_setup_airtable.png)
+
+When that is done you can test the API calls in teh NoCodeAPI UI, this also gives you the code to use in your app.
+![image](NCAPI_setup_airtable.png)
+
+```python
+airtableData = roomInfo(revitRoomCollector)
+
+url = "https://v1.nocodeapi.com/jrandersen/airtable/NBknQBAnYLitRlTH?tableName=rooms"
+params = {}
+data = airtableData
+r = requests.post(url = url, params = params, json = data)
+result = r.json()
+print(result)
+```
 
 Enjoy
+![image](revitSync.gif)
