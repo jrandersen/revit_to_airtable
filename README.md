@@ -30,9 +30,9 @@ Technologies used:
 
 ## Tutorial
 ## Getting our application up and running
-- [Sprint](sprints/sprint1/sprint1.md) - Get a custom tab, panel & button wired up in Revit UI 
-- [Sprint](sprints/sprint1/sprint1.md) - Write functions to extract rooms output
-- [Sprint](sprints/sprint1/sprint1.md) - Display room info in pyRevit output
+- [Sprint](sprints/sprint1/sprint1.md# Create the plugin structure for a base application in pyRevit.) - Get a custom tab, panel & button wired up in Revit UI 
+- [Sprint](sprints/sprint1/sprint1.md# Write a basic function to extract rooms then print them in the PyRevit output window:) - Write functions to extract rooms output
+- [Sprint](sprints/sprint1/sprint1.md# Write function for a put request through NoCodeAPI) - Display room info in pyRevit output
 
 ## More advanced topics
 - [Sprint](sprints/sprint2.md) - Establish a rooms table in AirTable.
