@@ -49,6 +49,7 @@ print(roomInfo(revitRoomCollector))
 ```
 
 And here we have it.
+
 ![image](print_rooms_output.png)
 
 ---
@@ -63,15 +64,16 @@ Set up a NoCodeAPI account and your airtable API's on the platform.
 
 ![image](NCAPI_setup_airtable.png)
 
-When that is done you can test the API calls in teh NoCodeAPI UI, this also gives you the code to use in your app.
+When that is done you can test the API calls in the NoCodeAPI UI, this also gives you an example of code to use in your app.
+
 ![image](NCAPI_post_code.png)
 
-Now, lets update out pyRevit app with the following code, switch teh previous ```print``` to a variable containing teh room information
+Now, lets update our pyRevit app with the following code, switch the previous ```print``` to a variable containing the room information.
 ```python
 airtableData = roomInfo(revitRoomCollector)
 ```
 
-Then add the code from NoCodeAPI
+Then add the code from NoCodeAPI, updating the ```data = airtableData``` line.
 ```python
 url = "https://v1.nocodeapi.com/jrandersen/airtable/NBknQBAnYLitRlTH?tableName=rooms"
 params = {}
@@ -81,5 +83,15 @@ result = r.json()
 print(result)
 ```
 
-Now go ahead and press Sync, and Enjoy!
+Now, make sure you save, go ahead and press Sync, and Enjoy!
+
 ![image](revitSync.gif)
+
+You now have use the API to move information from Revit -> Airtable.
+
+![image](airtableSync.png)
+
+### Conclusions
+Sprint one is meant to get people up and running, fast. There are some major issue with this workflow such as hard-coding api calls into the base code, and the application does not 'remember' or 'know' if a certain model has been harvested, so it will just keep adding more and more rooms. We will cover these issues and more in the next tutorials.
+
+Hope folks find this helpful.
