@@ -1,11 +1,11 @@
 ## Sprint One
 ### Create the plugin structure for a base application in pyRevit.
 
-Basic folder structure, py scripts, icons, and yaml files. You can find great icon on ICON8.
+Basic folder structure, py scripts, icons, and yaml files. Find great selection of royalty free icons on [ICON8](https://icons8.com/icons).
 ![image](base_app_code.png)
 
 
-Put in some really simple code to test out app in Revit to see that it works
+Write some really simple code to test out the app in Revit to see that it works.
 ```python
 # base extension
 
@@ -14,7 +14,7 @@ print(param)
 ```
 
 
-Test it... okay, it is up and running
+Test it... okay, it is up and running.
 ![image](base_app.png)
 
 ---
