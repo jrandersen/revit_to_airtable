@@ -25,10 +25,14 @@ Use RPW to get all rooms
 
 Organize them
 
-
-Create post command (make suer you have NoCodeAPI account)
+print rooms in pyRevit window
 
 ---
 <br>
 
 ### Write function for a put request through NoCodeAPI
+Set up NoCodeAPI account
+
+Create post command
+
+Enjoy
