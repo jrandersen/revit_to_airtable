@@ -54,19 +54,23 @@ And here we have it.
 ---
 <br>
 
-### Write function for a put request through NoCodeAPI
-Get an airtable base up and running with teh same columns from your model export, make sure the names are correct (case-sensitive) & data types are in line.
+### Write a function for a *POST* request through NoCodeAPI.
+Get an airtable base up and running with the same columns from your model export, make sure the column headings are correct; case & datatype-sensitive!
 ![image](airtable_rooms.png)
 
-Set up a NoCodeAPI account and your airtable API's.
+Set up a NoCodeAPI account and your airtable API's on the platform.
 ![image](NCAPI_setup_airtable.png)
 
 When that is done you can test the API calls in teh NoCodeAPI UI, this also gives you the code to use in your app.
-![image](NCAPI_setup_airtable.png)
+![image](NCAPI_post_code.png)
 
+Now, lets update out pyRevit app with the following code, switch teh previous ```print``` to a variable containing teh room information
 ```python
 airtableData = roomInfo(revitRoomCollector)
+```
 
+Then add the code from NoCodeAPI
+```python
 url = "https://v1.nocodeapi.com/jrandersen/airtable/NBknQBAnYLitRlTH?tableName=rooms"
 params = {}
 data = airtableData
@@ -75,5 +79,5 @@ result = r.json()
 print(result)
 ```
 
-Enjoy
+Now go ahead and press Sync, and Enjoy!
 ![image](revitSync.gif)
