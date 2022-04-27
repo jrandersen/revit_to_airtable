@@ -1,4 +1,4 @@
-# Libraray file to contain revit model harvesting class / functions
+# Library file to contain revit model harvesting class / functions
 from pyrevit import DB
 import rpw
 
@@ -11,3 +11,4 @@ def roomInfo():
             'Name': e.Parameter[DB.BuiltInParameter.ROOM_NAME].AsString(),\
              'Number': int(e.Number)})
     return roomInfo
+

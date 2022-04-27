@@ -77,5 +77,9 @@ with forms.ProgressBar(title='Exporting room data Aitable base', indeterminate=T
     print(postRoomData)
 ```
 ### Establish a sync table in AirTable.
-Now is time to set up a sync file. In airtable make a new tab called ```modelSync```. In that create columns 
+Now is time to set up a sync file. In airtable make a new table called ```modelSync```. In there create columns, numberOfSyncs, userName, modelPath, modelName. Then make the first column a formula that concatenates the path & model ```modelPath&"/"&modelName```. We will use this to identify our model for now.
+
+![image](modelSync_table.png)
+
+
 ### Write functions to manage sync events
