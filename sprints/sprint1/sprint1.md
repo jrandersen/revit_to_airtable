@@ -59,17 +59,17 @@ And here we have it.
 <br>
 
 ### Write a function for a *POST* request through [NoCodeAPI](https://nocodeapi.com/).
-I have been using NoCodeAPI since beginning of 2021 for prototyping, or in making really fast MVP's. I find it great for this task, teh free tier is generous and the breadth of access to tools is large and expanding all the time. 
+I have been using NoCodeAPI since beginning of 2021 for prototyping, or in making really fast MVP's. I find it great for this task, the free tier is generous and the breadth of access to tools is large and expanding all the time. 
 
 Establish an airtable base with the same columns from your model export, make sure the column headings are correct; case & datatype-sensitive! In my case I am only pulling 'name' & 'number' from Revit, all other columns here are for general airtable stuff (we will cover more of this in later posts).
 
 ![image](airtable_rooms.png)
 
-Set up a NoCodeAPI account and your airtable API's on the platform.
+Set up an airtable API's on the platform.
 
 ![image](NCAPI_setup_airtable.png)
 
-When that is done you can test the API calls in the NoCodeAPI UI, this also gives you an example of code to use in your app.
+When that is done you can test the API calls in the NoCodeAPI UI, this also gives you an example of code to use in your app. You now have access to all CRUD function on this base through NoCodeAPI. The best part is that they deal with all the *particulars* of teh airtable api, throttling, pagination, errors etc.
 
 ![image](NCAPI_post_code.png)
 
