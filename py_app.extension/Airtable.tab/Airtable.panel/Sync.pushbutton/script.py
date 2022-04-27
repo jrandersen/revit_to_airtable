@@ -18,29 +18,36 @@ with forms.ProgressBar(title='Exporting room data to Aitable base', indeterminat
     # instantiate def, get room info
     #airtableData = harvest.roomInfo()
 
-    # get information from the modelSync table in airtable
-    getSyncs = airtable.getData(env.MODELSYNCS)
-    #print('modelsync response: {}'.format(getSyncs))
-    
-    syncRecordId = []
-    roomRecordId = []
-   
-    for sync in getSyncs:
-        for record in sync['records']:
-            print(record['id'])
-            if record['fields']['roomsCount'] != 0:
-                print(record['fields']['Rooms'])
-            else:
-                print("No Rooms!")
-
     # get the model information needed
     path = harvest.getModelPath()
     user = harvest.getUserName()
     modelName = harvest.getModelName()
 
-    #print('path: {}'.format(path))
-    #print('user: {}'.format(user))
-    #print('model name: {}'.format(modelName))
+    # get information from the modelSync table in airtable
+    getSyncs = airtable.getData(env.MODELSYNCS)
+    
+    syncRecordId = []
+    roomRecordId = []
+    for sync in getSyncs:
+        for record in sync['records']:
+            if path == record['fields']['modelPath']:
+                syncRecordId = record['id']
+                if record['fields']['roomsCount'] != 0:
+                    roomRecordId = record['fields']['Rooms']
+                print("updating existing records...")
+                consecutiveSyncData = [{'id':record['id'],"fields":{"numberOfSyncs":int(record['fields']['numberOfSyncs'] + 1)}}]
+                updateModelSync = airtable.putData(env.MODELSYNCS, consecutiveSyncData)
+                print('updated record {}'.format(updateModelSync))       
+    if len(syncRecordId)  == 0:
+        print('posting new model records...')
+        newSyncData = [{"modelName":modelName,\
+             "numberOfSyncs":1,\
+                'modelPath':path,\
+                    'userName':user}]
+        postModelSync = airtable.postData(env.MODELSYNCS, newSyncData)
+        print('new record {}'.format(postModelSync))
+
+
 
 
     # post request to airtable through nocode api

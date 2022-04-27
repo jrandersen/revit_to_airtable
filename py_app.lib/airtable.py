@@ -14,3 +14,9 @@ def getData(url):
     r = requests.get(url = url, params = {})
     result.append(r.json())
     return utils.listSmash(result)
+
+def putData(url, data):
+    result = []
+    r = requests.put(url = url, params = {}, json = data)
+    result.append(r.json())
+    return utils.listSmash(result)
