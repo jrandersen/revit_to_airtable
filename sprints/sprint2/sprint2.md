@@ -144,7 +144,7 @@ Instantiating the GET request function and feeding our url from the env file suc
 
 In the response notice the records and ```id:``` of each row in the model sync table. In addition, this has all of the record ids from ```Rooms``` table (they are now linked tables in airtable). 
 
-Next, let's parse this info out. We iterate over the response to get the items we need, all the while adding in some cases for if there are no linked tables (somehow this could happen, I'm sure.)
+Next, let's parse this info out. We iterate over the response to get the items we need, all the while adding in some cases for if there are no linked tables (somehow this could happen, I'm sure.).
 ```python
     for sync in getSyncs:
         for record in sync['records']:
@@ -156,3 +156,5 @@ Next, let's parse this info out. We iterate over the response to get the items w
 ```
 
 ![image](parse_response.png)
+
+I had to create a ```roomsCount``` column in the modelSync table in order to then query it in my code to identify if there are any linked records in the Rooms table. If you notice ```record['fields']['Rooms']``` is a List, which is great, in addition the ```record['id']``` is simple to get. 
