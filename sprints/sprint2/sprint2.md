@@ -82,6 +82,7 @@ Now is time to set up a sync table, create one called ```modelSync```. In there 
 - userName 
 - modelPath 
 - modelName 
+
 Then make the first column a formula that concatenates both the path & model ```modelPath&"/"&modelName```. We will use this to identify our model for now.
 
 ![image](modelSync_table.png)
