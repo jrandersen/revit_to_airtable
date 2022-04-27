@@ -26,9 +26,9 @@ Then test it... great, we are up and running!
 ### Write a basic function to extract rooms then print them in the PyRevit output window:
 Replace our previous script with one that imports: 
 - ```Autodesk.DB``` from [pyRevit](https://www.notion.so/pyrevitlabs/pyRevit-bd907d6292ed4ce997c46e84b6ef67a0)
-- [Revit Python Wrapper](https://revitpythonwrapper.readthedocs.io/en/latest/)  
+- [Revit Python Wrapper](https://revitpythonwrapper.readthedocs.io/en/latest/)
+- Then create a filtered element collector containing all rooms in the model.
 
-Then create a filtered element collector containing all rooms in the model.
 ```python
 # pyRevit
 from pyrevit import DB
