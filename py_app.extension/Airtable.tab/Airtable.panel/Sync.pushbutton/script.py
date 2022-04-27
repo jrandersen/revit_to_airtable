@@ -12,11 +12,8 @@ from pyrevit import forms
 # our library files
 import env, harvest, airtable
 
-#general
-import requests
-
 # use pyRevit forms to show progress.
-with forms.ProgressBar(title='Exporting Workorders to Aitable base', indeterminate=True):
+with forms.ProgressBar(title='Exporting room data to Aitable base', indeterminate=True):
  
     # instantiate def, get room info
     airtableData = harvest.roomInfo()

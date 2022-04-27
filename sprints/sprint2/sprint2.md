@@ -31,5 +31,50 @@ We have one last part, update the ```.gitignore``` file so that we *do NOT* push
 Environment variables can get somewhat complex with dev and production credentials, deployment options to users etc, but this tutorial is meant to be an entry point for people, so the goal is to demonstrate concepts first. 
 
 ### Establish a sync table in AirTable.
+As next steps here I have added a ```harvest.py``` & ```airtable.py``` to the library folder. This starts to encapsulate some similar classes and functions. In the harvest file I have added
+```python
+from pyrevit import DB
+import rpw
+
+# room info
+def roomInfo():
+    roomInfo = []
+    revitRoomCollector = rpw.db.Collector(of_category=DB.BuiltInCategory.OST_Rooms, is_not_type=True)   
+    for e in revitRoomCollector:
+        roomInfo.append({
+            'Name': e.Parameter[DB.BuiltInParameter.ROOM_NAME].AsString(),\
+             'Number': int(e.Number)})
+    return roomInfo
+```
+
+and to the airtable file I have added:
+```python
+import requests
+
+def postData(url, data):
+    r = requests.post(url = url, params = {}, json = data)
+    result = r.json()
+    return result
+```
+
+Notice that I move all teh imports there too. This signifigantly cleans up teh main script in the revot ribbon too:
+```python
+# pyRevit
+from pyrevit import forms
+
+# our library files
+import env, harvest, airtable
+
+# use pyRevit forms to show progress.
+with forms.ProgressBar(title='Exporting room data Aitable base', indeterminate=True):
+ 
+    # instantiate def, get room info
+    airtableData = harvest.roomInfo()
+
+    # do a basic post request to airtable through nocode api
+    postRoomData = airtable.postData(env.REVIT_SYNC, airtableData)
+
+    print(postRoomData)
+```
 
 ### Write functions to manage sync events
