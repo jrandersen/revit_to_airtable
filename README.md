@@ -25,18 +25,18 @@ More guides are available here: [Create Your First Command](https://www.notion.s
 ## Tutorial, Getting our application up and running
 ### Sprint One
 
-- [Sprint](sprints/sprint1/sprint1.md) - Get a custom tab, panel & button wired up in Revit UI 
-- [Sprint](https://github.com/jrandersen/revit_to_airtable/blob/main/sprints/sprint1/sprint1.md#write-a-basic-function-to-extract-rooms-then-print-them-in-the-pyrevit-output-window) - Write functions to extract rooms output
-- [Sprint](https://github.com/jrandersen/revit_to_airtable/blob/main/sprints/sprint1/sprint1.md#write-function-for-a-put-request-through-nocodeapi) - Establish a rooms table in AirTable, write function for a put request through NoCodeAPI. .
+- [Sprint 1](sprints/sprint1/sprint1.md) - Get a custom tab, panel & button wired up in Revit UI 
+- [Sprint 1](https://github.com/jrandersen/revit_to_airtable/blob/main/sprints/sprint1/sprint1.md#write-a-basic-function-to-extract-rooms-then-print-them-in-the-pyrevit-output-window) - Write functions to extract rooms output
+- [Sprint 1](https://github.com/jrandersen/revit_to_airtable/blob/main/sprints/sprint1/sprint1.md#write-function-for-a-put-request-through-nocodeapi) - Establish a rooms table in AirTable, write function for a put request through NoCodeAPI. .
 
 ### Sprint Two
-- [Sprint](sprints//sprint2/sprint2.md) - Establish an environments like file, update API endpoints.
-- [Sprint](sprints//sprint2/sprint2.md) - Establish a 'sync' table in AirTable.
-- [Sprint](sprints/sprint2/sprint2.md) - Write functions to manage 'sync' events.
+- [Sprint 2](sprints//sprint2/sprint2.md) - Establish an environments like file, update API endpoints.
+- [Sprint 2](sprints//sprint2/sprint2.md) - Establish a 'sync' table in AirTable.
+- [Sprint 2](sprints/sprint2/sprint2.md) - Write functions to manage 'sync' events.
 
 ### Sprint Three
-- [Sprint](sprints//sprint3/sprint3.md) - Establish a levels table, update functions to pull level element info.
-- [Sprint](sprints/sprint3//sprint3.md) - Write functions to manage linking rooms to levels in airtable.
+- [Sprint 3](sprints//sprint3/sprint3.md) - Establish a levels table, update functions to pull level element info.
+- [Sprint 3](sprints/sprint3//sprint3.md) - Write functions to manage linking rooms to levels in airtable.
 
 &nbsp;
 
