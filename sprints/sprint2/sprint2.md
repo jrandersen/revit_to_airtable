@@ -77,7 +77,7 @@ with forms.ProgressBar(title='Exporting room data Aitable base', indeterminate=T
     print(postRoomData)
 ```
 ### Establish a sync table in AirTable.
-Now is time to set up a sync table, create one called ```modelSync```. In there create columns: 
+Create a new table called ```modelSync```; in there create columns: 
 - numberOfSyncs 
 - userName 
 - modelPath 
@@ -87,5 +87,15 @@ Then make the first column a formula that concatenates both the path & model ```
 
 ![image](modelSync_table.png)
 
-
+Now we need to write some psuedo-code that:
+```python
+# first does a GET request to sync table,
+# then compares the response to the modelPath + modelName to see if the record exists. 
+# If it *does not* exist the function does a POST request with the new model info to the sync table 
+# takes the recordId of the modelSync line to use later
+# then proceeds with the exports of rooms, add the modelSync recordId to the room element (we will update existing function and airtable to do this).
+# Else if a record *does* exist, 
+# the function makes a list if the rooms recordIds * the modelSync recordId 
+# then does a DELETE request to teh rooms table
 ### Write functions to manage sync events
+```
