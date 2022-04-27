@@ -102,18 +102,18 @@ Now we need update the code in our app do the following, in psuedo-code:
 ```
 
 This should do it, I opted to go ahead with the DELETE request for a couple of reasons. 
-- First when a person deletes a room in revit, the record in airtable still exists and we would have to parse new and old to then delete any in airtable anyway, then do teh update on teh rest, so I am electing to gather all rooms in airtable associated with this model and wipe them out each new sync.
+- First when a person deletes a room in revit, if a record in airtable still existed and we would have to parse the new and old to then delete any difference in airtable anyway, then do the update on the remaining records, so I am electing to gather all rooms in airtable associated with this model and wipe them out with each new sync.
 - This also has the side-benefit of keeping line count low in the free tier of airtable.
-- A disadvantage is that we do not get 'historical' data. If that were the case we would have to set up a different function (i'll do this in other tutorials when interacting directly with PostgreSQL or MongoDB, it is much easier there) 
+- One disadvantage is that we do not get 'historical' data. If that were the case we would have to set up a different function (i'll do this in other tutorials when interacting directly with PostgreSQL or MongoDB, it is much easier there). 
 
-Here are updates to the harvest functions:
-```python
-#hello
-```
-
-Here are the updates to teh airtable 
-```python
-#hello
-```
 
 ### Write functions to manage sync events
+Here are updates to the function in the harvest file:
+```python
+#hello
+```
+
+Here are the updates to the functions in the airtable file: 
+```python
+#hello
+```
