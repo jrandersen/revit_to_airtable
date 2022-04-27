@@ -58,8 +58,10 @@ And here we have it.
 ---
 <br>
 
-### Write a function for a *POST* request through NoCodeAPI.
-Get an airtable base up and running with the same columns from your model export, make sure the column headings are correct; case & datatype-sensitive! In my case I am only syncing 'name' & 'number' columns all others are done in airtable (we will cover more of this in later posts).
+### Write a function for a *POST* request through [NoCodeAPI](https://nocodeapi.com/).
+I have been using NoCodeAPI since beginning of 2021 for prototyping, or in making really fast MVP's. I find it great for this task, teh free tier is generous and the breadth of access to tools is large and expanding all the time. 
+
+Establish an airtable base with the same columns from your model export, make sure the column headings are correct; case & datatype-sensitive! In my case I am only pulling 'name' & 'number' from Revit, all other columns here are for general airtable stuff (we will cover more of this in later posts).
 
 ![image](airtable_rooms.png)
 
