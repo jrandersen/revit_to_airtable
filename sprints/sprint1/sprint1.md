@@ -15,7 +15,8 @@ print(param)
 ```
 
 
-Test it... okay, it is up and running.
+In the main pyRevit tab connect in your new *py_app.extension* as outlined [here](https://www.notion.so/Create-Your-First-Command-2509b43e28bd498fba937f5c1be7f485) 
+Then test it... great, we are up and running!
 
 ![image](base_app.png)
 

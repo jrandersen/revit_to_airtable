@@ -28,7 +28,7 @@ url = env.REVIT_SYNC
 
 We have one last part, update the ```.gitignore``` file so that we *do NOT* push this env file to github. Once that is done, the file should be greyed out in the folder structure. Now this local environments file that can hold centralized information that will not get out. When distributing the app remember to walk your users through setting this file up, some repos do this in their main install instructions.
 
-Environment variables can get somewhat complex with dev and production credentials, deployment options to uses etc, but this tutorial is meant to be an entry point for people, so the goal is to demonstrate concepts first. 
+Environment variables can get somewhat complex with dev and production credentials, deployment options to users etc, but this tutorial is meant to be an entry point for people, so the goal is to demonstrate concepts first. 
 
 ### Establish a sync table in AirTable.
 
