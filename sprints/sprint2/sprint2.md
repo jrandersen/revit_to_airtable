@@ -129,7 +129,7 @@ def getModelName():
 ```
 
 
-Here are the updates to the functions in the airtable file. 
+Here are the updates to the functions in the airtable file. I have added some code here to deal with large response from NoCodeAPI. It is buried in documentation but their response are bundles of 100 lines, this is to deal with airtable throttling. To deal with that on our side I am creating a list ```result``` then each 100 line ```r.json``` is appended to it, finally in the return I am flattening the list with the ```utils.listSmash```. 
 ```python
 def getData(url):
     result = []
