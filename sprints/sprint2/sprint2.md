@@ -87,15 +87,22 @@ Then make the first column a formula that concatenates both the path & model ```
 
 ![image](modelSync_table.png)
 
-Now we need to write some psuedo-code that:
+Now we need update our app do do teh following, in psuedo-code:
 ```python
 # first does a GET request to sync table,
 # then compares the response to the modelPath + modelName to see if the record exists. 
 # If it *does not* exist the function does a POST request with the new model info to the sync table 
-# takes the recordId of the modelSync line to use later
-# then proceeds with the exports of rooms, add the modelSync recordId to the room element (we will update existing function and airtable to do this).
+# then stores the recordId of the modelSync response to use later.
+# then proceeds with the export of rooms as before, but the function add the modelSync recordId to the room element (we will update existing function and airtable to do this).
 # Else if a record *does* exist, 
-# the function makes a list if the rooms recordIds * the modelSync recordId 
-# then does a DELETE request to teh rooms table
-### Write functions to manage sync events
+# the function makes a list if the rooms recordIds & the stores modelSync recordId for use later. 
+# then the function does a DELETE request to the rooms table, with the recordIds above (I know, we could also do an UPDATE request to the rooms table, maybe try that too, making sure to add or take away a rooms in revit to see if all records are correct)
+# finally at last, the function does a POST request to add the room data and the modelSync recordIds
 ```
+
+This should do it, I am opting to do teh DELETE request for a couple of reasons. 
+- First when a person deletes a room for whatever reason teh record in airtable still exists and we would have to parse new and old and delete any in airtable which are not in teh model, so I am electing to gather all rooms in airtable associated with this model and wipe them out and start fresh. 
+- This also has teh benefit of keeping line count low in teh free tier of airtable.
+- A disadvantage is that we do not get 'historical' data. If that were the case we would have to set up a different function (i'll do this in other tutorial when using PostGRE or MongoDB, it is much easier there) 
+
+### Write functions to manage sync events
