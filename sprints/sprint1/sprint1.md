@@ -103,6 +103,6 @@ Sprint one is meant to get people up & running, fast. There are most certainly m
 - the application does not 'remember' or 'know' if a certain model has been harvested, so it will just keep adding more and more rooms.
 - As it is, it is the app not really extendable, pretty bare bones utilitarian.
 
-In the [Sprint 2](sprints//sprint2/sprint2.md), we will clean up some of this on our way to making this a more robust application.
+In the [Sprint 2](../sprint2/sprint2.md), we will clean up some of this on our way to making this a more robust application.
 
 Cheers! hope folks find this helpful.
