@@ -12,23 +12,23 @@ Once all the files are saved, I would recommend navigating back to pyRevit ribbo
 
 ![image](reload_pyrevit.png)
 
-Your folder structure should look something like this now 
+Your folder structure should look something like this now. 
 
 ![image](folder_structure.png)
 
-Now navigate back to your ```script.py``` file and add teh import for the env file
+Now navigate back to your ```script.py``` file and add the import for the env file.
 ```python
 import env
 ```
 
-Then in your POST request update your url to
+Then in your POST request update the url to.
 ```python
 url = env.REVIT_SYNC
 ```
 
-We have one last import part, update your ```.gitignore``` file to *NOT* save your env file. Once that is done you should see teh file greyed out in the folder structure. Now you have a local file that can hold centralized information that will not get out of your org. When distrusting this app remember to walk your user through setting this file up. In larger orgs this can be automated.
+We have one last part, update the ```.gitignore``` file so that we *do NOT* push this env file to github. Once that is done, the file should be greyed out in the folder structure. Now this local environments file that can hold centralized information that will not get out. When distributing the app remember to walk your users through setting this file up, some repos do this in their main install instructions.
 
-Environment variables can get quite complex with dev and production versions, deploying them to uses etc, but this tutorial is meant to be an entry point for people, so it is kept as easy entry to demonstrate concepts first. 
+Environment variables can get somewhat complex with dev and production credentials, deployment options to uses etc, but this tutorial is meant to be an entry point for people, so the goal is to demonstrate concepts first. 
 
 ### Establish a sync table in AirTable.
 
