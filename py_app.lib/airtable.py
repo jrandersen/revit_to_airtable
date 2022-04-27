@@ -1,7 +1,16 @@
 #Airtable function through NoCodeAPI
 import requests
+import utils
+
 
 def postData(url, data):
+    result = []
     r = requests.post(url = url, params = {}, json = data)
-    result = r.json()
-    return result
+    result.append(r.json())
+    return utils.listSmash(result)
+
+def getData(url):
+    result = []
+    r = requests.get(url = url, params = {})
+    result.append(r.json())
+    return utils.listSmash(result)

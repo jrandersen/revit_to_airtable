@@ -16,9 +16,21 @@ import env, harvest, airtable
 with forms.ProgressBar(title='Exporting room data to Aitable base', indeterminate=True):
  
     # instantiate def, get room info
-    airtableData = harvest.roomInfo()
+    #airtableData = harvest.roomInfo()
 
-    # do a basic post request to airtable through nocode api
-    postRoomData = airtable.postData(env.REVIT_SYNC, airtableData)
+    # get information from the modelSync table in airtable
+    getSyncs = airtable.getData(env.MODELSYNCS)
+    print('modelsync response:'.format(getSyncs))
 
-    print(postRoomData)
+    # get the model information needed
+    path = harvest.getModelPath
+    user = harvest.getUserName
+    modelName = harvest.getModelName
+
+    print('path:'.format(path))
+    print('user:'.format(user))
+    print('model name:'.format(modelName))
+
+    
+    # post request to airtable through nocode api
+    #postRoomData = airtable.postData(env.ROOMS, airtableData)
