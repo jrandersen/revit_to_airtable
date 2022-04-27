@@ -30,8 +30,8 @@ We have one last part, update the ```.gitignore``` file so that we *do NOT* push
 
 Environment variables can get somewhat complex with dev and production credentials, deployment options to users etc, but this tutorial is meant to be an entry point for people, so the goal is to demonstrate concepts first. 
 
-### Establish a sync table in AirTable.
-As next steps here I have added a ```harvest.py``` & ```airtable.py``` to the library folder. This starts to encapsulate some similar classes and functions. In the harvest file I have added
+### Some app clean up and re-factoring
+As next steps here, I have added a ```harvest.py``` & ```airtable.py``` to the library folder. This starts to encapsulate some similar classes and functions. In the harvest file I have added
 ```python
 from pyrevit import DB
 import rpw
@@ -57,7 +57,7 @@ def postData(url, data):
     return result
 ```
 
-Notice that I move all teh imports there too. This signifigantly cleans up teh main script in the revot ribbon too:
+Notice that I moved all the imports there too. This significantly cleans up the main ```script.py``` file in the Revit ribbon too, as it is just calling to functions in other files:
 ```python
 # pyRevit
 from pyrevit import forms
@@ -76,5 +76,6 @@ with forms.ProgressBar(title='Exporting room data Aitable base', indeterminate=T
 
     print(postRoomData)
 ```
-
+### Establish a sync table in AirTable.
+Now is time to set up a sync file. In airtable make a new tab called ```modelSync```. In that create columns 
 ### Write functions to manage sync events
