@@ -93,16 +93,16 @@ Now, make sure you save, go ahead and press Sync, and Enjoy!
 
 ![image](revitSync.gif)
 
-You now have an app to move information from Revit -> AirTable through teh API.
+You now have an app to move information from Revit -> AirTable through the API.
 
 ![image](airtableSync.png)
 
 ### Next Steps
 Sprint one is meant to get people up & running, fast. There are most certainly major issue with this workflow such as:
-- hard-coding api calls into the base code.
+- hard-coding api calls into the base code, big no-no.
 - the application does not 'remember' or 'know' if a certain model has been harvested, so it will just keep adding more and more rooms.
-- As it is, it is not really extendable.
+- As it is, it is the app not really extendable, pretty bare bones utilitarian.
 
-In the next tutorials, we will clean up some of this on our way to making this a more robust application.
+In the [Sprint 2](sprints//sprint2/sprint2.md), we will clean up some of this on our way to making this a more robust application.
 
-Hope folks find this helpful.
+Cheers! hope folks find this helpful.
