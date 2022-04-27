@@ -110,10 +110,37 @@ This should do it, I opted to go ahead with the DELETE request for a couple of r
 ### Write functions to manage sync events
 Here are updates to the function in the harvest file:
 ```python
-#hello
+# =============== GET MODEL DATA
+def getModelPath():
+    modelPath = []
+    if doc.IsWorkshared:
+        modelPath = DB.ModelPathUtils.ConvertModelPathToUserVisiblePath(doc.GetWorksharingCentralModelPath())
+    else:
+        modelPath = doc.PathName
+    return modelPath
+
+def getUserName():
+    userName = doc.Application.Username
+    return userName
+
+def getModelName():
+    modelName = doc.Title
+    return modelName
 ```
+
+This provides some function to get the model path if a file is either workshared or not workshared. In addition I am getting username & simple model name. 
 
 Here are the updates to the functions in the airtable file: 
 ```python
-#hello
+def getData(url):
+    result = []
+    r = requests.get(url = url, params = {})
+    result.append(r.json())
+    return utils.listSmash(result)
 ```
+
+I have added a GET request and the feeding our url from the env file such as ```getSyncs = airtable.getData(env.MODELSYNCS)``` gets us a response from airtable like:
+
+![image](get_request_doc_data.png)
+
+In the response notice the records and ```id:``` of each row in the model sync table. In addition, this has all of the record ids for ```Rooms``` table. Next, let's parse this info out.

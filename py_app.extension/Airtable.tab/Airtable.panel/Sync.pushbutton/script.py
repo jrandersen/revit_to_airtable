@@ -20,17 +20,17 @@ with forms.ProgressBar(title='Exporting room data to Aitable base', indeterminat
 
     # get information from the modelSync table in airtable
     getSyncs = airtable.getData(env.MODELSYNCS)
-    print('modelsync response:'.format(getSyncs))
+    print('modelsync response: {}'.format(getSyncs))
 
     # get the model information needed
-    path = harvest.getModelPath
-    user = harvest.getUserName
-    modelName = harvest.getModelName
+    path = harvest.getModelPath()
+    user = harvest.getUserName()
+    modelName = harvest.getModelName()
 
-    print('path:'.format(path))
-    print('user:'.format(user))
-    print('model name:'.format(modelName))
+    print('path: {}'.format(path))
+    print('user: {}'.format(user))
+    print('model name: {}'.format(modelName))
 
-    
+
     # post request to airtable through nocode api
     #postRoomData = airtable.postData(env.ROOMS, airtableData)
