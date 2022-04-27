@@ -30,8 +30,8 @@ More guides are available here: [Create Your First Command](https://www.notion.s
 - [Sprint 1](https://github.com/jrandersen/revit_to_airtable/blob/main/sprints/sprint1/sprint1.md#write-function-for-a-put-request-through-nocodeapi) - Establish a rooms table in AirTable, write function for a put request through NoCodeAPI. .
 
 ### Sprint Two
-- [Sprint 2](sprints//sprint2/sprint2.md) - Establish an environments like file, update API endpoints.
-- [Sprint 2](sprints//sprint2/sprint2.md) - Establish a 'sync' table in AirTable.
+- [Sprint 2](sprints/sprint2/sprint2.md) - Establish an environments like file, update API endpoints.
+- [Sprint 2](sprints/sprint2/sprint2.md) - Establish a 'sync' table in AirTable.
 - [Sprint 2](sprints/sprint2/sprint2.md) - Write functions to manage 'sync' events.
 
 ### Sprint Three
