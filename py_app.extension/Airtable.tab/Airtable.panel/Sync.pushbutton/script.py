@@ -28,16 +28,17 @@ with forms.ProgressBar(title='Exporting room data to Aitable base', indeterminat
     
     syncRecordId = []
     roomRecordId = []
-    for sync in getSyncs:
-        for record in sync['records']:
-            if path == record['fields']['modelPath']:
-                syncRecordId = record['id']
-                if record['fields']['roomsCount'] != 0:
-                    roomRecordId = record['fields']['Rooms']
-                print("updating existing records...")
-                consecutiveSyncData = [{'id':record['id'],"fields":{"numberOfSyncs":int(record['fields']['numberOfSyncs'] + 1)}}]
-                updateModelSync = airtable.putData(env.MODELSYNCS, consecutiveSyncData)
-                print('updated record {}'.format(updateModelSync))       
+    for record in getSyncs['records']:
+        if path == record['fields']['modelPath']:
+            print(path)
+            print(record['fields']['modelPath'])
+            syncRecordId = record['id']
+            if record['fields']['roomsCount'] != 0:
+                roomRecordId = record['fields']['Rooms']
+            print("updating existing records...")
+            consecutiveSyncData = [{'id':record['id'],"fields":{"numberOfSyncs":int(record['fields']['numberOfSyncs'] + 1)}}]
+            updateModelSync = airtable.putData(env.MODELSYNCS, consecutiveSyncData)
+            print('updated record {}'.format(updateModelSync))       
     if len(syncRecordId)  == 0:
         print('posting new model records...')
         newSyncData = [{"modelName":modelName,\
@@ -46,9 +47,6 @@ with forms.ProgressBar(title='Exporting room data to Aitable base', indeterminat
                     'userName':user}]
         postModelSync = airtable.postData(env.MODELSYNCS, newSyncData)
         print('new record {}'.format(postModelSync))
-
-
-
 
     # post request to airtable through nocode api
     #postRoomData = airtable.postData(env.ROOMS, airtableData)

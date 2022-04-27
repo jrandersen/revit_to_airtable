@@ -10,10 +10,9 @@ def postData(url, data):
     return utils.listSmash(result)
 
 def getData(url):
-    result = []
     r = requests.get(url = url, params = {})
-    result.append(r.json())
-    return utils.listSmash(result)
+    result = r.json()
+    return result
 
 def putData(url, data):
     result = []
