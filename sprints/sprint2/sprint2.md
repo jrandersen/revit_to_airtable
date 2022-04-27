@@ -138,7 +138,7 @@ def getData(url):
     return utils.listSmash(result)
 ```
 
-I have added a GET request function and feeding our url from the env file such as ```getSyncs = airtable.getData(env.MODELSYNCS)``` gets us a response from airtable like:
+Instantiating the GET request function and feeding our url from the env file such as ```getSyncs = airtable.getData(env.MODELSYNCS)``` gets us a response from airtable like:
 
 ![image](get_request_doc_data.png)
 
