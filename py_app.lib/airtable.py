@@ -47,7 +47,11 @@ def setModelSync(url, modelSyncs):
                 roomRecordId = record['fields']['Rooms']
             else:
                 roomRecordId = []
-            consecutiveSyncData = [{'id': syncRecordId,"fields":{"numberOfSyncs": numberOfSyncs}}]
+            consecutiveSyncData = [{'id': syncRecordId,\
+                "fields":{"numberOfSyncs": numberOfSyncs,\
+                    'modelPath':harvest.getModelPath(),\
+                        'userName':harvest.getUserName(),\
+                            "modelName":harvest.getModelName()}}]
             # airtable api call
             updateModelSync = putData(url, consecutiveSyncData)
             print('put response: {}'.format(updateModelSync))
