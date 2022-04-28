@@ -9,10 +9,13 @@ def roomInfo(recordId):
     roomInfo = []
     revitRoomCollector = rpw.db.Collector(of_category=DB.BuiltInCategory.OST_Rooms, is_not_type=True)   
     for e in revitRoomCollector:
-        roomInfo.append({
-            'Name': e.Parameter[DB.BuiltInParameter.ROOM_NAME].AsString(),\
-             'Number': int(e.Number),\
-                 'modelSync': [recordId]})
+        if e.Parameter[DB.BuiltInParameter.ROOM_AREA].AsDouble() != 0:
+            roomInfo.append({
+                'Name': e.Parameter[DB.BuiltInParameter.ROOM_NAME].AsString(),\
+                'Number': int(e.Number),\
+                    'modelSync': [recordId]})
+        else:
+            pass
     return roomInfo
 
 # =============== GET MODEL DATA
