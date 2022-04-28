@@ -22,7 +22,7 @@ More guides are available here: [Create Your First Command](https://www.notion.s
 
 &nbsp;
 
-## Tutorial, Getting our application up and running
+## Getting our application up and running
 ### Sprint One
 
 - [Sprint 1](sprints/sprint1/sprint1.md) - Get a custom tab, panel & button wired up in Revit UI 
