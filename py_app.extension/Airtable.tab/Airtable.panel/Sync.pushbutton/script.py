@@ -14,42 +14,20 @@ import env, harvest, airtable
 
 # use pyRevit forms to show progress.
 with forms.ProgressBar(title='Exporting room data to Aitable base', indeterminate=True):
- 
-    # instantiate def, get room info
-    #airtableData = harvest.roomInfo()
-
-    # get the model information needed
-    path = harvest.getModelPath()
-    user = harvest.getUserName()
-    modelName = harvest.getModelName()
-
-    # get information from the modelSync table in airtable
+    # get information from the modelSync table in airtable, returns all model syncs
     getSyncs = airtable.getData(env.MODELSYNCS)
-    print('get syncs {}'.format(getSyncs))
-    
-    syncRecordId = []
-    roomRecordId = []
-    for record in getSyncs[0]['records']:
-        if path == record['fields']['modelPath']:
-            print("updating existing records...")
-            syncRecordId = record['id']
-            print(syncRecordId)
-            numberOfSyncs = int(record['fields']['numberOfSyncs'] + 1)
-            if record['fields']['roomsCount'] != 0:
-                roomRecordId = record['fields']['Rooms']
-            else:
-                roomRecordId = []
-            consecutiveSyncData = [{'id': syncRecordId,"fields":{"numberOfSyncs": numberOfSyncs}}]
-            updateModelSync = airtable.putData(env.MODELSYNCS, consecutiveSyncData)
-            print('put response {}'.format(updateModelSync))       
-    if len(syncRecordId)  == 0:
-        print('posting new model records...')
-        newSyncData = [{"modelName":modelName,\
-             "numberOfSyncs":1,\
-                'modelPath':path,\
-                    'userName':user}]
-        postModelSync = airtable.postData(env.MODELSYNCS, newSyncData)
-        print('post response {}'.format(postModelSync))
+
+    #check and set model sync table, returns model sync record id and room list.
+    setModelSyncTable = airtable.setModelSync(env.MODELSYNCS, getSyncs)
+    #print(setModelSyncTable)
+
+    deleteData = airtable.deleteData(env.ROOMS, setModelSyncTable[1])
+    print('delete data response: {}'.format(deleteData))
+   
+    # instantiate def, get room info
+    airtableData = harvest.roomInfo(setModelSyncTable[0])
+    #print('room data from airtable: {}'.format(airtableData))
 
     # post request to airtable through nocode api
-    #postRoomData = airtable.postData(env.ROOMS, airtableData)
+    postRoomData = airtable.postData(env.ROOMS, airtableData)
+    print('room data response: {}'.format(postRoomData))
