@@ -13,7 +13,7 @@ from pyrevit import forms
 import env, harvest, airtable
 
 # use pyRevit forms to show progress.
-with forms.ProgressBar(title='Exporting room data to Aitable base', indeterminate=True):
+with forms.ProgressBar(title='Exporting room data to Airtable base', indeterminate=True):
     # get information from the modelSync table in airtable, returns all model syncs
     getSyncs = airtable.getData(env.MODELSYNCS)
 

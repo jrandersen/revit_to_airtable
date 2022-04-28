@@ -240,5 +240,35 @@ def setModelSync(url, modelSyncs):
 ```
 
 The ```setModelSync()``` function handles the logic for managing all changes to eth model sync table. It first looks for a match between teh modelId and RecordId from airtable, if it is found it walks through getting new info, iterating sync numbers and finally does put request. The second half is if there is no match, it gathers all info and does a post request to add a new line, then updates teh model to set the recordId in teh project number parameter. 
-The function returns both the recordId of the modelSync and room recordIds for use later in ```script.py```.
+The function returns both the recordId of the modelSync and room recordIds for use later.
 
+
+Now for the ```script.py``` file, we add all teh major moves here:
+
+```python
+# pyRevit
+from pyrevit import forms
+
+# our library files
+import env, harvest, airtable
+
+# use pyRevit forms to show progress.
+with forms.ProgressBar(title='Exporting room data to Airtable base', indeterminate=True):
+    # get information from the modelSync table in airtable, returns all model syncs
+    getSyncs = airtable.getData(env.MODELSYNCS)
+
+    #check and set model sync table, returns model sync record id and room list.
+    setModelSyncTable = airtable.setModelSync(env.MODELSYNCS, getSyncs)
+    #print(setModelSyncTable)
+
+    deleteData = airtable.deleteData(env.ROOMS, setModelSyncTable[1])
+    print('delete data response: {}'.format(deleteData))
+   
+    # instantiate def, get room info
+    airtableData = harvest.roomInfo(setModelSyncTable[0])
+    #print('room data from airtable: {}'.format(airtableData))
+
+    # post request to airtable through nocode api
+    postRoomData = airtable.postData(env.ROOMS, airtableData)
+    print('room data response: {}'.format(postRoomData))
+```
