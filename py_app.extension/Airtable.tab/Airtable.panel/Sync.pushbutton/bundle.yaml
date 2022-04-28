@@ -10,4 +10,3 @@ tooltip: Export information to Airtable.
 engine:
   clean: true
   full_frame: true
-  persistent: true
