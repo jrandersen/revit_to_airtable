@@ -67,7 +67,7 @@ def setModelSync(url, modelSyncs):
                 'modelPath':harvest.getModelPath(),\
                     'userName':harvest.getUserName()}]
         postModelSync = postData(url, newSyncData)
-        print('updateing revit param with recordId, remember to Save...')
+        print('updating revit param with recordId, remember to Save...')
         for record in postModelSync:
             syncRecordId = record['id']
             # set project number in model

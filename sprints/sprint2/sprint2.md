@@ -160,6 +160,39 @@ Next, let's parse this info out. We iterate over the response to get the items w
 &nbsp;
 ---
 
-And it works! I had to create a ```roomsCount``` column in the modelSync table in order to then query it in my code to identify if there are any linked records in the Rooms table. If you notice ```record['fields']['Rooms']``` is a List, which is great, in addition the ```record['id']``` is simple to get.
+And it works, it performs teh logic to identify a new model to teh list! 
+I had to create a ```roomsCount``` column in the table, so that I could query it in the code to grab the recordIds of Rooms table rows. If you notice ```record['fields']['Rooms']``` is a List, which is great, in addition the ```record['id']``` is simple to get.
 
 ![image](revitModelSync_Table.gif)
+
+I now have to re-factor quite a bit in this next section. First in the ```harvest.py``` file we add:
+
+```python
+def getModelId():
+    recordId = None
+    pg_collector = DB.FilteredElementCollector(doc)\
+    .WherePasses(DB.ElementCategoryFilter(DB.BuiltInCategory.OST_ProjectInformation))\
+        .WhereElementIsNotElementType().ToElements()
+    for i in pg_collector:
+        recordId = i.Parameter[DB.BuiltInParameter.PROJECT_NUMBER].AsString()
+    return recordId
+
+# =============== SET MODEL DATA
+def setModelId(recordId):
+    pg_collector = DB.FilteredElementCollector(doc)\
+    .WherePasses(DB.ElementCategoryFilter(DB.BuiltInCategory.OST_ProjectInformation))\
+        .WhereElementIsNotElementType().ToElements()
+
+    for i in pg_collector:
+        t = DB.Transaction(doc, "Set recordId in Project Number")
+        t.Start()
+        orgName = i.Parameter[DB.BuiltInParameter.PROJECT_NUMBER]
+        orgName.Set(recordId)
+        t.Commit()        
+    return recordId
+```
+
+The ```getModelId()``` function pulls the value from the parameter *Project Number*. I decided to store (for now) the airtable RECORD_ID() here. I will follow up with a tutorial on extensible storage at a later date to update this. If this param does not work for you just select another that works. I just wanted something that will be consistent with all new started projects, and project information is always there. If the model has not been synced before this will be blank or have 'Project Number' written in it.
+
+The ```setModelId()``` will be used to set it, once received back our response from airtable. we'll pass it through and update the param.
+
