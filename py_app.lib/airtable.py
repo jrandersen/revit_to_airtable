@@ -27,7 +27,7 @@ def deleteData(url, recordIds):
     params = {}
     try:
         r = requests.delete(url = url, params = params, json = data)
-        return r
+        return r.json()
     except Exception as msg:
         print(msg)
         pass
