@@ -12,8 +12,8 @@ def roomInfo(recordId):
         if e.Parameter[DB.BuiltInParameter.ROOM_AREA].AsDouble() != 0:
             roomInfo.append({
                 'Name': e.Parameter[DB.BuiltInParameter.ROOM_NAME].AsString(),\
-                'Number': int(e.Number),\
-                    'modelSync': [recordId]})
+                    'Number': int(e.Number),\
+                        'modelSync': [recordId]})
         else:
             pass
     return roomInfo

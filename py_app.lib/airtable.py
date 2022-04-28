@@ -47,25 +47,24 @@ def setModelSync(url, modelSyncs):
                 roomRecordId = record['fields']['Rooms']
             else:
                 roomRecordId = []
-            consecutiveSyncData = [{'id': syncRecordId,\
-                "fields":{"numberOfSyncs": numberOfSyncs,\
-                    'modelPath':harvest.getModelPath(),\
-                        'userName':harvest.getUserName(),\
-                            "modelName":harvest.getModelName()}}]
+            consecutiveSyncData = [{
+                'id': syncRecordId,\
+                    "fields":{"numberOfSyncs": numberOfSyncs,\
+                        'modelPath':harvest.getModelPath(),\
+                            'userName':harvest.getUserName(),\
+                                "modelName":harvest.getModelName()}}]
             # airtable api call
             updateModelSync = putData(url, consecutiveSyncData)
             print('put response: {}'.format(updateModelSync))
         else:
             pass       
-    #print('recordId: {}'.format(syncRecordId))
-    #print('roomIds: {}'.format(roomRecordId))
-    
     if syncRecordId  == '':
         print('posting new model records...')
-        newSyncData = [{"modelName":harvest.getModelName(),\
-             "numberOfSyncs":1,\
-                'modelPath':harvest.getModelPath(),\
-                    'userName':harvest.getUserName()}]
+        newSyncData = [{
+            "modelName":harvest.getModelName(),\
+                "numberOfSyncs":1,\
+                    'modelPath':harvest.getModelPath(),\
+                        'userName':harvest.getUserName()}]
         postModelSync = postData(url, newSyncData)
         print('updating revit param with recordId, remember to Save...')
         for record in postModelSync:
