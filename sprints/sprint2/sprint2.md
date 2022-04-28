@@ -192,15 +192,15 @@ def setModelId(recordId):
     return recordId
 ```
 
-The ```getModelId()``` function pulls the value from the parameter *Project Number*. I decided to store (for now) the airtable RECORD_ID() here. I will follow up with a tutorial on extensible storage at a later date to update this. If this param does not work for you just select another that works. I just wanted something that will be consistent with all new started projects, and project information is always there. If the model has not been synced before this will be blank or have 'Project Number' written in it.
+The ```getModelId()``` function pulls the value from the parameter *Project Number*. I decided to store (for now) the airtable RECORD_ID() here. I will follow up with a tutorial on extensible storage at a later date. If this param does not work for you just select another that works, I just wanted something that will be consistent with all new started projects, and project information is always there. The ```setModelId()``` will be used to set it, once received back our response from airtable. we'll pass it through and update the param.
 
-The ```setModelId()``` will be used to set it, once received back our response from airtable. we'll pass it through and update the param.
 
-Second is the ```airtable.py``` file we also add:
+Second is the ```airtable.py``` file we add:
 ```python
 def setModelSync(url, modelSyncs):
     syncRecordId = ''
     roomRecordId = []
+    # parsing the response here to find match between modelId <--> recordId
     for record in modelSyncs[0]['records']:
         modelid = harvest.getModelId()
         if harvest.getModelId() == record['id']:
@@ -222,9 +222,7 @@ def setModelSync(url, modelSyncs):
             print('put response: {}'.format(updateModelSync))
         else:
             pass       
-    #print('recordId: {}'.format(syncRecordId))
-    #print('roomIds: {}'.format(roomRecordId))
-    
+    # if no match was found, we assume it is new and add a new record
     if syncRecordId  == '':
         print('posting new model records...')
         newSyncData = [{"modelName":harvest.getModelName(),\
@@ -240,4 +238,7 @@ def setModelSync(url, modelSyncs):
         print('post response: {}'.format(postModelSync))
     return syncRecordId, roomRecordId
 ```
+
+The ```setModelSync()``` function handles the logic for managing all changes to eth model sync table. It first looks for a match between teh modelId and RecordId from airtable, if it is found it walks through getting new info, iterating sync numbers and finally does put request. The second half is if there is no match, it gathers all info and does a post request to add a new line, then updates teh model to set the recordId in teh project number parameter. 
+The function returns both the recordId of the modelSync and room recordIds for use later in ```script.py```.
 
