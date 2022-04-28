@@ -157,10 +157,9 @@ Next, let's parse this info out. We iterate over the response to get the items w
 
 ![image](parse_response.png)
 
-I had to create a ```roomsCount``` column in the modelSync table in order to then query it in my code to identify if there are any linked records in the Rooms table. If you notice ```record['fields']['Rooms']``` is a List, which is great, in addition the ```record['id']``` is simple to get.
+&nbsp;
+---
 
-![image](modelSync_roomsCount.png)
-
-And it works!
+And it works! I had to create a ```roomsCount``` column in the modelSync table in order to then query it in my code to identify if there are any linked records in the Rooms table. If you notice ```record['fields']['Rooms']``` is a List, which is great, in addition the ```record['id']``` is simple to get.
 
 ![image](revitModelSync_Table.gif)
