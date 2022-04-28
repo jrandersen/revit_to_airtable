@@ -34,6 +34,7 @@ More guides are available here: [Create Your First Command](https://www.notion.s
 - [Sprint 2](sprints/sprint2/sprint2.md) - Establish a 'sync' table in AirTable.
 - [Sprint 2](sprints/sprint2/sprint2.md) - Write functions to manage 'sync' events.
 
+------------------- FUTURE POSTS ---------------------
 ### Sprint Three
 - [Sprint 3](sprints//sprint3/sprint3.md) - Establish a levels table, update functions to pull level element info.
 - [Sprint 3](sprints/sprint3//sprint3.md) - Write functions to manage linking rooms to levels in airtable.
