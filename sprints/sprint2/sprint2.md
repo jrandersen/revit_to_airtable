@@ -243,7 +243,7 @@ The ```setModelSync()``` function handles the logic for managing all changes to 
 The function returns both the recordId of the modelSync and room recordIds for use later.
 
 
-Now for the ```script.py``` file, we add all teh major moves here:
+Now for the ```script.py``` file, we add:
 
 ```python
 # pyRevit
@@ -272,3 +272,11 @@ with forms.ProgressBar(title='Exporting room data to Airtable base', indetermina
     postRoomData = airtable.postData(env.ROOMS, airtableData)
     print('room data response: {}'.format(postRoomData))
 ```
+
+This has all the major moves, get request on ModelSync table, compare model and model sync data & update, delete request on Rooms table, gate all new rooms from model, then finally post request with new room data.
+
+![image](revitModelSync_Full.gif)
+
+In the .gif above notice that the model sync table updates along with the deletion and creation of new linked files in the rooms table. There are certainly some more things to work out, but that wraps it up for this workflow.
+
+Let me know if you have any feedback!
