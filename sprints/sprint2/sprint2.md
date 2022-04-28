@@ -277,6 +277,6 @@ This has all the major moves, get request on ModelSync table, compare model and 
 
 ![image](revitModelSync_Full.gif)
 
-In the .gif above notice that the model sync table updates along with the deletion and creation of new linked files in the rooms table. There are certainly some more things to work out, but that wraps it up for this workflow.
+In the .gif above notice that the model sync table updates along with the deletion and creation of new linked files in the rooms table, oh, and I set it up to not pull unplaced rooms. There are certainly some more things to work out, but that wraps it up for this workflow.
 
 Let me know if you have any feedback!
